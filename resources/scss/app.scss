@@ -1,1 +1,298 @@
+@use 'partials/variables.scss' as *;
+@use 'partials/reset.scss' as *;
+@use 'partials/mixins.scss' as *;
+@use 'partials/utilities.scss' as *;
+
 @import "~bootstrap/scss/bootstrap";
+
+//  * 
+//      HEADER 
+//  *
+header {
+    .blue-bar {
+        max-height: 25px;
+        background-color: $lightBlue;
+    
+        .blue-bar-text {
+            font-size: 10px;
+            font-weight: 500;
+            padding: 2px 0;
+        }
+    }
+    
+    .additional-dc-sites {
+        background: none;
+        border: none;
+    }
+    
+    .navbar {
+    
+        .logo {
+    
+            img {
+                max-height: 100px;
+                padding: 10px 0;
+            }
+        }
+    
+        .navbar-links {
+    
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+    
+            ul {
+                list-style-type: none;
+                height: 100%;
+                margin-bottom: 0 !important;
+                padding: 0 !important;
+    
+                li {
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &:hover a {
+                        color: $lightBlue;
+                    }
+
+                    &:hover a::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -150%;
+                        width: 100%;
+                        height: 5px;
+                        background-color: $lightBlue;                      
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #0E0E0E;
+                        font-size: 14px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        -webkit-transform: scale(.8, 1.2);
+                        display: inline-block;
+                        
+                        &:hover {
+                            
+                        }
+    
+                    }
+                }
+    
+            }
+            
+        }
+    
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid $lightBlue;
+            padding: 0px 0px 2px 0px;
+    
+            .search-text {
+                border: none;
+                background: none;
+                font-size: 14px;
+                color: #0E0E0E;
+                width: 100%;
+                max-width: 80px;
+    
+                &::placeholder {
+                    font-family: "Open Sans", sans-serif;
+                    color: #0E0E0E;
+                    text-align: right;
+                    font-weight: 700;
+                    -webkit-transform: scale(.8, 1.2);
+                    display: inline-block;
+                }
+                
+                &:focus {
+                    outline: none;
+                }
+            }
+    
+            i {
+                font-size: 16px;
+                color: $lightBlue;
+            }
+        }
+    }
+}
+
+
+// *
+//      MAIN
+// *
+
+main {
+    min-height: 1250px;
+    background-image: url(../../public/img/jumbotron.jpg);
+
+    .comics-list {
+        min-height: 625px;
+        width: 100%;
+        background-color: #1C1C1C;
+        
+
+        .container {
+            position: relative;
+
+            .current-series {
+                position: absolute;
+                top: -25px;
+                left: -25px;
+                font-size: 24px;
+                padding: 10px 25px; 
+            }
+    
+            .blue-layout {
+                color: white;
+                background-color: $lightBlue;         
+                text-transform: uppercase;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 700;
+                -webkit-transform: scale(.8, 1.2);
+            }
+    
+            .single-comic {
+                min-height: 250px;
+                text-align: center;
+    
+                img {
+                    height: 185px;
+                    width: 100%;
+                }
+    
+                .comic-title {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+            }
+    
+            .load-more-button {
+                border: none;
+                letter-spacing: 1.2px;
+                padding: 5px 100px;
+                margin-bottom: 25px;
+            }
+        }
+
+        
+    }
+
+    .shop-section {
+        background-color: $lightBlue;
+        z-index: 2;
+
+        .single-product {
+            width: calc((100% / 5) - 10px);
+
+            .product-img {
+                max-width: 75px;
+                max-height: 75px;
+            }
+
+            .product-name {
+                font-size: 15px;
+                text-transform: uppercase;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+//  *
+//      Footer
+//  *
+
+.endpage {
+    background-image: url(../../public/img/footer-bg.jpg);
+    background-size: cover;
+
+    .container {
+
+        .row {
+
+            .link-label {
+                text-transform: uppercase;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 700;
+                -webkit-transform: scale(.8, 1.2);
+                margin-left: -23px;
+            }
+
+            ul {
+                padding-left: 0;
+                list-style-type: none;
+
+                li {
+
+                    a {
+                        color: #999999;
+                        font-size: 14px;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $lightBlue;
+                        }
+                    }
+                }
+            }
+
+            .dc-background {
+                background-image: url(../../public/img/dc-logo-bg.png);
+                background-repeat: no-repeat;
+                height: 600px;
+                margin-top: -90px;
+                margin-bottom: -125px;
+                z-index: 1;
+            }
+        }
+
+        .endpage-text {
+            color: #999999;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        
+    }
+}
+
+.social-container {
+    min-height: 100px;
+    background-color: #232323;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    
+
+    .row {
+        width: 100%;
+        margin: 0 auto;
+
+        .sign-up {
+            text-transform: uppercase;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 500;
+            -webkit-transform: scale(.8, 1.2);
+            font-size: 16px;
+            border: 2px solid $lightBlue;
+            padding: 10px 15px;
+        }
+
+        .follow-us {
+            text-transform: uppercase;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 700;
+            -webkit-transform: scale(.8, 1.2);
+            font-size: 18px;
+        }
+    }
+}
